@@ -1,5 +1,8 @@
 Lucas Desgranges
 # DevWebBUT2
 
-Td1: j'ai créé l'environnement virtuel et j'ai installé flask et le package python-dotenv. J'ai organisé le projet en créant différent dossier et j'ai configuré le projet.
-Je me suis arrêté à l'étape 2 du "C'est a vous de jouer"
+Td1: j'ai crÃ©Ã© l'environnement virtuel et j'ai installÃ© flask et le package python-dotenv. J'ai organisÃ© le projet en crÃ©ant diffÃ©rent dossier et j'ai configurÃ© le projet.
+Je me suis arrÃªtÃ© Ã  l'Ã©tape 2 du "C'est a vous de jouer"
+
+Td2: j'ai fini le tp1 en creent about et contact
+    j'ai cree la base de donne et je les remplie avec flask et je les utilisÃ© avec flask shell
