@@ -7,4 +7,5 @@ Je me suis arrêté à l'étape 2 du "C'est a vous de jouer"
 Td2: j'ai fini le tp1 en creent about et contact
     j'ai cree la base de donne et je les remplie avec flask et je les utilisé avec flask shell
 
-Td3: j'ai fini le Td2 avec la manipulation de la base de donnée comme : insert, delete
+Td3: j'ai fini le Td2 avec la manipulation de la base de donnée comme : insert, delete.
+    j'ai fini le Tp3 où j'ai du creer les fichier .html et .css afin d'utiliser des templates qui permette d'utiliser des variables et de donnée du style aux pages.
