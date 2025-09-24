@@ -22,9 +22,9 @@
                 <td>{{ unLivre.idL }}</td>
                 <td>{{ unLivre.Titre }}</td>
                 <td>{{ unLivre.Prix }}</td>
-                <td>{{ unLivre.Url }}</td>
-                <td>{{ unLivre.Img }}</td>
-                <td>{{ unLivre.auteur }}</td>
+                <td><a href="{{ unLivre.Url }}" target="_blank">{{ unLivre.Url }}</a></td>
+                <td><img src="../static/images/{{unLivre.Img}}"></img></td>
+                <td>{{ unLivre.auteur.Nom }}</td>
             </tr>
         {% endfor %}
         </tbody>
