@@ -11,4 +11,5 @@ Td3: j'ai fini le Td2 avec la manipulation de la base de donnée comme : insert,
     j'ai fini le Tp3 où j'ai du creer les fichier .html et .css afin d'utiliser des templates qui permette d'utiliser des variables et de donnée du style aux pages.
     j'ai commençais le Tp4 où j'ai créé une page qui permet d'afficher un tableau qui listes les auteurs et leur nombre de livres, j'ai aussi commençais a faire la page qui liste les livres.
 
-Td4: réalisation de la page qui affiche un tableau avec tous les livres de la base de donnée
+Td4: réalisation de la page qui affiche un tableau avec tous les livres de la base de donnée.
+    ajout de BOOTSTRAP pour un meilleur visuel et une meilleur utilisation avec la barre de navigation

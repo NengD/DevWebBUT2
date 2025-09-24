@@ -10,3 +10,6 @@ app.config.from_object('config')
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 db.init_app(app)
+
+from flask_bootstrap5 import Bootstrap
+Bootstrap(app)
