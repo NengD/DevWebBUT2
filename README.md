@@ -14,3 +14,5 @@ Td3: j'ai fini le Td2 avec la manipulation de la base de donnée comme : insert,
 Td4: réalisation de la page qui affiche un tableau avec tous les livres de la base de donnée.
     ajout de BOOTSTRAP pour un meilleur visuel et une meilleur utilisation avec la barre de navigation.
     ajout du premier formulaire
+
+Td5: j'ai finaliser le formulaire permettant de modifier le nom d'un auteur, j'ai également ajouter un affichage des erreurs de validations, j'ai ajouter la possibiliter de créer un auteur et la possibliter de supprimer un auteur. J'ai aussi ajouter la possibilité de modifier le prix d'un livre.
