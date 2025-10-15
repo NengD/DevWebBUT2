@@ -12,6 +12,8 @@
                 <th>Nom</th>
                 <th>Nombre de livres</th>
                 <th>Action possible</th>
+                <th>Modifier / Supprimer</th>
+                <th>Liste des titres</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +22,7 @@
                 <td>{{ unAuteur.idA }}</td>
                 <td>{{ unAuteur.Nom }}</td>
                 <td>{{ unAuteur.livres.count() }}</td>
-                <td><div class="task-controls">
+                <td><div class="task-controls"> 
                     <a href="{{ url_for('viewAuteur', idA=unAuteur.idA) }}" class="btn btn-nfo">
                     Voir <i class="fas fa-eye"></i></a>
                     </div>
@@ -29,6 +31,17 @@
                     {% if current_user.is_authenticated %}
                         <a href="{{ url_for('updateAuteur', idA=unAuteur.idA) }}" class="btn btn-warning">Editer <i class="fas fa-pen"></i></a>
                         <a href="{{ url_for('deleteAuteur', idA=unAuteur.idA) }}" class="btn btn-danger">Supprimer <i class="fas fa-trash"></i></a>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if unAuteur.livres %}
+                        <ul>
+                        {% for livre in unAuteur.livres %}
+                            <li>{{ livre.Titre }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>Aucun livre pour cet auteur.</p>
                     {% endif %}
                 </td>
             </tr>

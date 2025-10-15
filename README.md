@@ -31,3 +31,8 @@ J'ai finaliser le formulaire permettant de modifier le nom d'un auteur, j'ai ég
 
 J'ai creer une table user avec la possibilite de creer un nouveau user et de modifier son mot de passe. J'ai ajouter un formulaire et une page permettant de se connecter et un bouton "se connecter" et "deconnexion". J'ai ajouter le faite que pour modifier et supprimer un auteur il faut etre connecter. J'ai terminer le Tp6 
 en ajoutant la redirection automatique sur la page login lorsqu'une personne pas connecter souhaite creer un auteur et quand il se connecte il est renvoyer sur la page creer un auteur. 
+
+## TD7
+J'ai ajouté des tests pour les models auteur, livre, user et pour les formulaires et pour les routes.
+J'ai ajouter le faite que quand on consulte les auteurs on peut voir les livres qu'ils ont écrit.
+J'ai ajouter une fonctionnaliter qui est celle de pouvoir s'inscrire en créant un nouvel utilisateur.

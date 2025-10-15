@@ -1,7 +1,7 @@
 from monApp.app import app
-from flask import render_template, request
+from flask import render_template, request, flash
 from monApp.models import Auteur, Livre
-from monApp.forms import FormAuteur,FormLivre,LoginForm
+from monApp.forms import FormAuteur, FormLivre, LoginForm, RegisterForm
 from flask import url_for,redirect
 from .app import db
 from flask_login import login_user, logout_user, login_required
@@ -147,6 +147,16 @@ def login():
 def logout():
     logout_user()
     return redirect ( url_for ('index'))
+
+@app.route('/register/', methods=['GET', 'POST'])
+def register():
+    form = RegisterForm()
+    if form.validate_on_submit():
+        from .commands import create_user
+        create_user(form.Login.data, form.Password.data)
+        flash('Votre compte a été créé avec succès ! Vous pouvez maintenant vous connecter.', 'success')
+        return redirect(url_for('login'))
+    return render_template('register.html', form=form)
 
 if __name__ == "__main__":
     app.run()

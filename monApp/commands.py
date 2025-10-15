@@ -46,18 +46,24 @@ def syncdb():
     db.create_all()
     lg.warning('Database synchronized!')
     
+from .models import User
+from hashlib import sha256
+
+def create_user(login, pwd):
+    """Crée un utilisateur avec un mot de passe haché et l'ajoute à la base de données."""
+    m = sha256()
+    m.update(pwd.encode())
+    unUser = User(Login=login, Password=m.hexdigest())
+    db.session.add(unUser)
+    db.session.commit()
+    return unUser
+
 @app.cli.command()
 @click.argument('login')
 @click.argument('pwd')
 def newuser (login, pwd):
     '''Adds a new user'''
-    from . models import User
-    from hashlib import sha256
-    m = sha256()
-    m.update(pwd.encode())
-    unUser = User(Login=login ,Password =m.hexdigest())
-    db.session.add(unUser)
-    db.session.commit()
+    create_user(login, pwd)
     lg.warning('User ' + login + ' created!')
 
 @app.cli.command()
