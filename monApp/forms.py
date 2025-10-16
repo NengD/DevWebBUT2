@@ -1,10 +1,20 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, HiddenField
 from wtforms.validators import DataRequired, EqualTo, ValidationError
+from .models import Auteur, User
+from hashlib import sha256
 
 class FormAuteur(FlaskForm):
     idA=HiddenField('idA')
     Nom = StringField ('Nom', validators =[DataRequired()])
+
+    def validate_Nom(self, Nom):
+        """
+        Vérifie si un auteur avec le même nom n'existe pas déjà dans la base.
+        """
+        auteur = Auteur.query.filter_by(Nom=Nom.data).first()
+        if auteur:
+            raise ValidationError("Un auteur avec ce nom existe déjà.")
 
 class FormLivre(FlaskForm):
     idL=HiddenField('idL')

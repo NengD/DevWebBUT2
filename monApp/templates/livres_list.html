@@ -15,7 +15,9 @@
                 <th>Première de couverture</th>
                 <th>Auteur</th>
                 <th>Visualisation</th>
-                <th>Modifier</th>
+                {% if current_user.is_authenticated %}
+                    <th>Modifier</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -32,11 +34,11 @@
                     Voir <i class="fas fa-eye"></i></a>
                     </div>
                 </td>
-                <td>
-                    {% if current_user.is_authenticated %}
+                {% if current_user.is_authenticated %}
+                    <td>
                         <a href="{{ url_for('UpdateLivre', idL=unLivre.idL) }}" class="btn btn-warning">Editer <i class="fas fa-pen"></i></a>
-                    {% endif %}
-                </td>
+                    </td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>

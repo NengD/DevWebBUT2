@@ -37,5 +37,7 @@ J'ai ajouté des tests pour les models auteur, livre, user et pour les formulair
 J'ai ajouter le faite que quand on consulte les auteurs on peut voir les livres qu'ils ont écrit.
 J'ai ajouter une fonctionnaliter qui est celle de pouvoir s'inscrire en créant un nouvel utilisateur.
 
-## En dehors
-J'ai ajouté des tests et la fonctionnalité de créer un compte.
+## Correction
+Quand on créé un auteur on est redirigé vers sa page de visualisation.
+Quand on créé un auteur qui existe déjà un message nous préviens que l'auteur existe déjà.
+Quand on n'est pas connecter les colonnes modifier et supprimer ne sont pas afficher.

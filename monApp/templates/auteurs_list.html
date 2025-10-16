@@ -12,8 +12,10 @@
                 <th>Nom</th>
                 <th>Nombre de livres</th>
                 <th>Visualisation</th>
-                <th>Modifier / Supprimer</th>
                 <th>Liste des titres</th>
+                {% if current_user.is_authenticated %}
+                    <th>Modifier / Supprimer</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -28,12 +30,6 @@
                     </div>
                 </td>
                 <td>
-                    {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('updateAuteur', idA=unAuteur.idA) }}" class="btn btn-warning">Editer <i class="fas fa-pen"></i></a>
-                        <a href="{{ url_for('deleteAuteur', idA=unAuteur.idA) }}" class="btn btn-danger">Supprimer <i class="fas fa-trash"></i></a>
-                    {% endif %}
-                </td>
-                <td>
                     {% if unAuteur.livres %}
                         <ul>
                         {% for livre in unAuteur.livres %}
@@ -44,6 +40,12 @@
                         <p>Aucun livre pour cet auteur.</p>
                     {% endif %}
                 </td>
+                {% if current_user.is_authenticated %}
+                    <td>
+                        <a href="{{ url_for('updateAuteur', idA=unAuteur.idA) }}" class="btn btn-warning">Editer <i class="fas fa-pen"></i></a>
+                        <a href="{{ url_for('deleteAuteur', idA=unAuteur.idA) }}" class="btn btn-danger">Supprimer <i class="fas fa-trash"></i></a>
+                    </td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
