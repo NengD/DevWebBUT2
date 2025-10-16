@@ -1,5 +1,5 @@
 from monApp.app import app
-from flask import render_template, request, flash
+from flask import render_template, request
 from monApp.models import Auteur, Livre
 from monApp.forms import FormAuteur, FormLivre, LoginForm, RegisterForm
 from flask import url_for,redirect
@@ -157,7 +157,6 @@ def register():
     if form.validate_on_submit():
         from .commands import create_user
         create_user(form.Login.data, form.Password.data)
-        flash('Votre compte a été créé avec succès ! Vous pouvez maintenant vous connecter.', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 

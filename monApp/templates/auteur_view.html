@@ -1,12 +1,27 @@
 {% extends "base.html" %}
 {% block main %}
-<h1 >Consultation de l'auteur {{ selectedAuteur.Nom }}</h1>
-<form role="form" method="POST" action="">
-    {{ viewForm.hidden_tag () }}
-    <div class="form-group mb-3">
-        {{ viewForm.Nom.label }}
-        {{ viewForm.Nom(size=50, disabled=True, class_="form-control") }}
+<div class="card">
+    <div class="card-header">
+        <h1>Détails de l'auteur</h1>
     </div>
-    <a href="{{ url_for('getAuteurs') }}" class="btn btn-secondary">Retour</a>
-</form >
+    <div class="card-body">
+        <h2 class="card-title">{{ selectedAuteur.Nom }}</h2>
+        <hr>
+        <h5 class="card-subtitle mb-2 text-muted">Livres de cet auteur</h5>
+        {% if selectedAuteur.livres.count() > 0 %}
+            <ul class="list-group">
+                {% for livre in selectedAuteur.livres %}
+                    <li class="list-group-item">
+                        <a href="{{ url_for('viewLivre', idL=livre.idL) }}">{{ livre.Titre }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun livre n'est associé à cet auteur pour le moment.</p>
+        {% endif %}
+    </div>
+    <div class="card-footer text-end">
+        <a href="{{ url_for('getAuteurs') }}" class="btn btn-secondary">Retour à la liste</a>
+    </div>
+</div>
 {% endblock %}

@@ -1,12 +1,24 @@
 {% extends "base.html" %}
 {% block main %}
-<h1 >Consultation du prix du livre {{ selectedLivre.Titre }}</h1>
-<form role="form" method="POST" action="">
-    {{ viewForm.hidden_tag () }}
-    <div class="form-group mb-3">
-        {{ viewForm.Prix.label }}
-        {{ viewForm.Prix(size=50, disabled=True, class_="form-control") }}
+<div class="card">
+    <div class="card-header">
+        <h1>Détails du livre</h1>
     </div>
-    <a href="{{ url_for('getLivres') }}" class="btn btn-secondary">Retour</a>
-</form >
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/' + selectedLivre.Img) }}" class="img-fluid" alt="Couverture de {{ selectedLivre.Titre }}">
+            </div>
+            <div class="col-md-8">
+                <h2 class="card-title">{{ selectedLivre.Titre }}</h2>
+                <p class="card-text"><strong>Auteur :</strong> <a href="{{ url_for('viewAuteur', idA=selectedLivre.auteur.idA) }}">{{ selectedLivre.auteur.Nom }}</a></p>
+                <p class="card-text"><strong>Prix :</strong> {{ selectedLivre.Prix }} €</p>
+                <p class="card-text"><strong>Lien :</strong> <a href="{{ selectedLivre.Url }}" target="_blank">Voir sur la boutique</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a href="{{ url_for('getLivres') }}" class="btn btn-secondary">Retour à la liste</a>
+    </div>
+</div>
 {% endblock %}
