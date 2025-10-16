@@ -36,3 +36,6 @@ en ajoutant la redirection automatique sur la page login lorsqu'une personne pas
 J'ai ajouté des tests pour les models auteur, livre, user et pour les formulaires et pour les routes.
 J'ai ajouter le faite que quand on consulte les auteurs on peut voir les livres qu'ils ont écrit.
 J'ai ajouter une fonctionnaliter qui est celle de pouvoir s'inscrire en créant un nouvel utilisateur.
+
+## En dehors
+J'ai ajouté des tests et la fonctionnalité de créer un compte.
