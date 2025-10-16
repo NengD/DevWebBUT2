@@ -1,6 +1,7 @@
 import pytest
 from monApp import app, db
 from monApp.models import Auteur, Livre, User
+from hashlib import sha256
 
 @pytest.fixture
 def testapp():
@@ -19,8 +20,12 @@ def testapp():
         livre = Livre(Prix=19.99, Titre="Les Misérables", Url="http://exemple.com", Img="img.jpg", auteur_id=auteur.idA)
         db.session.add(livre)
         # Ajouter un user de test
-        user1 = User(Login="testuser", Password="motdepasse")
-        user2 = User(Login="CDAL", Password="AIGRE")
+        m_user1 = sha256()
+        m_user1.update("motdepasse".encode())
+        m_user2 = sha256()
+        m_user2.update("AIGRE".encode())
+        user1 = User(Login="testuser", Password=m_user1.hexdigest())
+        user2 = User(Login="CDAL", Password=m_user2.hexdigest())
         db.session.add(user1)
         db.session.add(user2)
         db.session.commit()

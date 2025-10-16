@@ -44,6 +44,7 @@ def updateAuteur(idA):
     return render_template("auteur_update.html",selectedAuteur=unAuteur, updateForm=unForm)
 
 @app.route ('/auteur/save/', methods =("POST" ,))
+@login_required
 def saveAuteur():
     updatedAuteur = None
     unForm = FormAuteur()
@@ -90,6 +91,7 @@ def deleteAuteur(idA):
     return render_template("auteur_delete.html",selectedAuteur=unAuteur, deleteForm=unForm)
 
 @app.route ('/auteur/erase/', methods =("POST" ,))
+@login_required
 def eraseAuteur():
     deletedAuteur = None
     unForm = FormAuteur()
@@ -109,6 +111,7 @@ def UpdateLivre(idL):
     return render_template("livre_update.html",selectedLivre=unLivre,updateForm=unForm)
 
 @app.route ('/livre/save/', methods =("POST" ,))
+@login_required
 def saveLivre():
     updatedLivre = None
     unForm = FormLivre()

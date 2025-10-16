@@ -2,8 +2,6 @@ import pytest
 from monApp.models import Livre
 from monApp import db
 
-def test_livre_fields(client):
-    with client.application.app_context():
 def test_livre_fields(testapp):
     with testapp.app_context():
         livre = db.session.get(Livre, 1)
